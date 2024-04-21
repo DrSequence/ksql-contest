@@ -1,0 +1,19 @@
+app:
+  streams:
+    shop-topic: "shop-orders"
+    event-topic: "product_view_events"
+    result-topic: "viewed_purchase"
+
+spring:
+  application:
+    name: purchase-finder
+
+  kafka:
+    bootstrap-servers: localhost:9093
+    consumer:
+      group-id: purchase-finder-jv
+    streams:
+      properties:
+        default:
+          value:
+            serde: org.springframework.kafka.support.serializer.JsonSerde
